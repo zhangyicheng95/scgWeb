@@ -479,7 +479,7 @@ h3 {
   margin-left: 250px;
   margin-top: 5vw;
   height: calc(100vh - 5vw);
-  width: calc(100vw - 250px);
+  width: calc(100vw - 300px);
 }
 
 #firstGo {
@@ -572,7 +572,7 @@ h3 {
   position: fixed;
   left: 0;
   top: 5vw;
-  width: 249px;
+  width: 300px;
   height: calc(100vh - 5vw);
   z-index: 999;
   border-right: 1px solid rgba(22, 33, 11, .2);
@@ -627,7 +627,13 @@ h3 {
   transition: all 0.3s ease;
 }
 
-.sidebar-link:hover,
+.sidebar-link:hover {
+  color: #4a93f9;
+  opacity: 1;
+  transform: scale(1.1);
+  transform: translateX(-1rem);
+}
+
 .sidebar-link.active {
   color: #4a93f9;
   opacity: 1;
@@ -661,6 +667,7 @@ h3 {
 }
 
 .r2-content {
+  width: 100%;
   height: 45%;
 }
 
@@ -1302,21 +1309,25 @@ h3 {
 .tech-item {
   flex: 1 1 0;
   background: rgba(0, 0, 0, 0.9);
+  background-position: 32%;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  transition: all .8s;
   border-radius: 2rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 4rem;
   text-align: center;
-  transition: all 0.5s cubic-bezier(.4, 0, .2, 1);
+  /* transition: all 0.5s cubic-bezier(.4, 0, .2, 1); */
   opacity: 0.7;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
-  height: 10%;
+  height: 18.5rem;
 }
 
 .tech-item.active {
   flex: 1 1 0;
   background: rgba(255, 255, 255, 0.92);
+  color: #000;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
   opacity: 1;
   height: auto;
@@ -1334,18 +1345,214 @@ h3 {
 }
 
 .tech-item .tech-desc {
+  display: none;
   color: #666;
   margin-top: 1rem;
+  border: 1px solid #4a93f9;
+  border-radius: 5rem;
+  text-align: center;
+  padding: .3rem 1rem;
 }
 
 .tech-item .tech-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: bold;
   margin-top: 1rem;
+  text-align: left;
 }
 
 .tech-item .tech-icon {
-  width: 64px;
-  height: 64px;
+  width: 100%;
+  height: 7rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tech-item .tech-icon img {
+  height: 100%;
+}
+
+.r3-more {
+  display: none;
+  position: absolute;
+  right: 4rem;
+  top: -.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #fff;
+  width: 8rem;
+  height: 8rem;
+  background-color: #4a93f9;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.r3-more .layer-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  transform: rotate(-90deg);
+}
+
+.tech-item.active .tech-icon {
+  height: 12rem;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.tech-item.active .tech-desc {
+  display: block;
+}
+
+.tech-item.active .r3-more {
+  display: flex;
+}
+
+/* 产业布局轮播样式 */
+.industry-carousel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.industry-item {
+  background: rgba(0, 0, 0, 0.9);
+  background-position: 32%;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  transition: all .8s;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem 4rem;
+  opacity: 0.7;
+  cursor: pointer;
+  position: relative;
+}
+
+.industry-item.active {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+  opacity: 1;
+  padding: 4rem 4rem;
+  width: 40rem;
+  height: auto;
+}
+
+.industry-item .industry-desc {
+  display: none;
+  color: #666;
+  margin-top: 2rem;
+}
+
+.industry-item .industry-title {
+  display: none;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.industry-item .industry-icon {
+  width: 100%;
+  height: 7rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.industry-item .industry-icon img {
+  height: 100%;
+}
+
+.industry-item.active .industry-icon {
+  height: 12rem;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.industry-item.active .industry-title {
+  display: block;
+}
+
+.industry-item.active .industry-desc {
+  display: block;
+}
+
+.industry-item.active .r4-more {
+  display: flex;
+}
+
+/* r4背景切换样式 */
+.r4-bg,
+.r4-bg-next {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity 0.9s cubic-bezier(.4, 0, .2, 1), filter 0.9s cubic-bezier(.4, 0, .2, 1);
+  pointer-events: none;
+}
+
+.r4-bg.industry-fade,
+.r4-bg-next.industry-fade {
+  opacity: 0;
+  filter: blur(12px);
+}
+
+.r4-bg::after,
+.r4-bg-next::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+/* 进度条样式 */
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 2rem 2rem;
+  overflow: hidden;
+  display: none;
+}
+
+.industry-item.active .progress-bar {
+  display: block;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4ff, #0099cc);
+  width: 0%;
+  transition: width 4s linear;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.progress-fill.animate {
+  width: 100%;
 }

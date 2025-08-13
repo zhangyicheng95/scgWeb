@@ -348,58 +348,124 @@ window.addEventListener('DOMContentLoaded', function () {
 // 优化背景切换为科技感顺滑动画
 // 需配合.r3-bg样式
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   const techItems = document.querySelectorAll('.tech-carousel .tech-item');
-//   if (!techItems.length) return;
-//   let current = 0;
-//   // r3背景图数组
-//   const r3BgArr = [
-//     'https://oss.allintrip.cn/shanwentou/upfiles/solution/GQVMZVPJN3ND.png',
-//     'https://oss.allintrip.cn/shanwentou/upfiles/solution/NGJ305SJ7XT8.jpg',
-//     'https://oss.allintrip.cn/shanwentou/upfiles/solution/M69VK2DAQAMG.jpg'
-//   ];
-//   function setR3Bg(idx) {
-//     const r3 = document.querySelector('.r3');
-//     const fullPage = document.querySelector('.fullPage');
-//     if (!r3 || !fullPage || r3.style.display === 'none') return;
+document.addEventListener('DOMContentLoaded', function () {
+  const techItems = document.querySelectorAll('.tech-carousel .tech-item');
+  if (!techItems.length) return;
+  let current = 0;
+  // r3背景图数组
+  const r3BgArr = [
+    'https://oss.allintrip.cn/shanwentou/upfiles/solution/GQVMZVPJN3ND.png',
+    'https://oss.allintrip.cn/shanwentou/upfiles/solution/NGJ305SJ7XT8.jpg',
+    'https://oss.allintrip.cn/shanwentou/upfiles/solution/M69VK2DAQAMG.jpg'
+  ];
+  function setR3Bg(idx) {
+    const r3 = document.querySelector('.r3');
+    const fullPage = document.querySelector('.fullPage');
+    if (!r3 || !fullPage || r3.style.display === 'none') return;
 
-//     // 当前背景层
-//     let bgDiv = fullPage.querySelector('.r3-bg');
-//     // 新的背景层
-//     let nextDiv = document.createElement('div');
-//     nextDiv.className = 'r3-bg r3-bg-next tech-fade';
-//     nextDiv.style.backgroundImage = `url('${r3BgArr[idx % r3BgArr.length]}')`;
-//     fullPage.insertBefore(nextDiv, bgDiv || fullPage.firstChild);
+    // 当前背景层
+    let bgDiv = fullPage.querySelector('.r3-bg');
+    // 新的背景层
+    let nextDiv = document.createElement('div');
+    nextDiv.className = 'r3-bg r3-bg-next tech-fade';
+    nextDiv.style.backgroundImage = `url('${r3BgArr[idx % r3BgArr.length]}')`;
+    fullPage.insertBefore(nextDiv, bgDiv || fullPage.firstChild);
 
-//     // 动画：新图淡入+清晰，旧图淡出
-//     setTimeout(() => {
-//       nextDiv.classList.remove('tech-fade');
-//       if (bgDiv) bgDiv.classList.add('tech-fade');
-//     }, 20);
+    // 动画：新图淡入+清晰，旧图淡出
+    setTimeout(() => {
+      nextDiv.classList.remove('tech-fade');
+      if (bgDiv) bgDiv.classList.add('tech-fade');
+    }, 20);
 
-//     // 动画结束后移除旧层
-//     setTimeout(() => {
-//       if (bgDiv && bgDiv.parentNode) bgDiv.parentNode.removeChild(bgDiv);
-//       nextDiv.classList.remove('r3-bg-next');
-//     }, 950);
-//   }
-//   function showTech(idx) {
-//     techItems.forEach((item, i) => {
-//       item.classList.toggle('active', i === idx);
-//     });
-//     setR3Bg(idx);
-//   }
-//   // r3初始时设置背景
-//   setR3Bg(0);
-//   setInterval(() => {
-//     current = (current + 1) % techItems.length;
-//     showTech(current);
-//   }, 4000);
-//   // 点击item手动切换
-//   techItems.forEach((item, idx) => {
-//     item.addEventListener('click', () => {
-//       current = idx;
-//       showTech(current);
-//     });
-//   });
-// }); 
+    // 动画结束后移除旧层
+    setTimeout(() => {
+      if (bgDiv && bgDiv.parentNode) bgDiv.parentNode.removeChild(bgDiv);
+      nextDiv.classList.remove('r3-bg-next');
+    }, 950);
+  }
+  function showTech(idx) {
+    techItems.forEach((item, i) => {
+      item.classList.toggle('active', i === idx);
+    });
+    setR3Bg(idx);
+  }
+  // r3初始时设置背景
+  setR3Bg(0);
+  setInterval(() => {
+    current = (current + 1) % techItems.length;
+    showTech(current);
+  }, 4000);
+  // 点击item手动切换
+  techItems.forEach((item, idx) => {
+    item.addEventListener('click', () => {
+      current = idx;
+      showTech(current);
+    });
+  });
+});
+
+// 产业布局轮播交互
+document.addEventListener('DOMContentLoaded', function () {
+  const industryItems = document.querySelectorAll('.industry-carousel .industry-item');
+  if (!industryItems.length) return;
+  let currentIndustry = 0;
+  
+  // r4背景图数组
+  const r4BgArr = [
+    'https://oss.allintrip.cn/shanwentou/upfiles/onepage/20240441592859731.jpeg',
+    'https://oss.allintrip.cn/shanwentou/upfiles/onepage/20240441592859733.jpeg',
+    'https://oss.allintrip.cn/shanwentou/upfiles/onepage/MG74FFW1PV7D.jpg',
+    'https://oss.allintrip.cn/shanwentou/upfiles/onepage/MG74FFW1PV10D.png',
+    'https://oss.allintrip.cn/shanwentou/upfiles/onepage/MG74FFW1PV9D.jpg'
+  ];
+  
+  function setR4Bg(idx) {
+    const r4 = document.querySelector('.r4');
+    const fullPage = document.querySelector('.fullPage');
+    if (!r4 || !fullPage || r4.style.display === 'none') return;
+
+    // 当前背景层
+    let bgDiv = fullPage.querySelector('.r4-bg');
+    // 新的背景层
+    let nextDiv = document.createElement('div');
+    nextDiv.className = 'r4-bg r4-bg-next industry-fade';
+    nextDiv.style.backgroundImage = `url('${r4BgArr[idx % r4BgArr.length]}')`;
+    fullPage.insertBefore(nextDiv, bgDiv || fullPage.firstChild);
+
+    // 动画：新图淡入+清晰，旧图淡出
+    setTimeout(() => {
+      nextDiv.classList.remove('industry-fade');
+      if (bgDiv) bgDiv.classList.add('industry-fade');
+    }, 20);
+
+    // 动画结束后移除旧层
+    setTimeout(() => {
+      if (bgDiv && bgDiv.parentNode) bgDiv.parentNode.removeChild(bgDiv);
+      nextDiv.classList.remove('r4-bg-next');
+    }, 950);
+  }
+  
+  function showIndustry(idx) {
+    industryItems.forEach((item, i) => {
+      item.classList.toggle('active', i === idx);
+    });
+    setR4Bg(idx);
+  }
+  
+  // r4初始时设置背景
+  setR4Bg(0);
+  
+  // 自动轮播
+  setInterval(() => {
+    currentIndustry = (currentIndustry + 1) % industryItems.length;
+    showIndustry(currentIndustry);
+  }, 4000);
+  
+  // 点击item手动切换
+  industryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => {
+      currentIndustry = idx;
+      showIndustry(currentIndustry);
+    });
+  });
+}); 
