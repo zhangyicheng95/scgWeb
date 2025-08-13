@@ -111,7 +111,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
     {
       title: '长安十二时辰',
-      desc: '长安十二时辰主题街区-一日长安，邂逅唐“潮”',
+      desc: '长安十二时辰主题街区-一日长安，邂逅唐"潮"',
       backUrl: 'https://oss.allintrip.cn/shanwentou/upfiles/onepage/20240473832641532.jpg'
     },
     {
@@ -135,7 +135,7 @@ window.addEventListener('DOMContentLoaded', function () {
     banners.forEach((item, idx) => {
       const btn = document.createElement('button');
       btn.className = 'banner-title-btn' + (idx === 0 ? ' active' : '');
-      btn.textContent = item.title.replace(/-.*/, '').replace(/《.*?》/, '').replace(/主题街区.*/, '').replace(/演艺.*/, '').replace(/——.*/, '').replace(/“.*?”/, '').replace(/\s+/g, '');
+      btn.textContent = item.title.replace(/-.*/, '').replace(/《.*?》/, '').replace(/主题街区.*/, '').replace(/演艺.*/, '').replace(/——.*/, '').replace(/".*?"/, '').replace(/\s+/g, '');
       titlesDiv.appendChild(btn);
     });
     bannerCarousel.appendChild(titlesDiv);
@@ -281,11 +281,14 @@ window.addEventListener('DOMContentLoaded', function () {
         break;
 
       case 'r3':
-        // r3时不清空fullPage内容，避免背景层和内容被清除
+        fullPage.style.backgroundImage = 'url(https://oss.allintrip.cn/shanwentou/upfiles/solution/GQVMZVPJN3ND.png)';
+        fullPage.style.backgroundSize = 'cover';
+        fullPage.style.backgroundPosition = 'center';
+        fullPage.style.backgroundRepeat = 'no-repeat';
         break;
       case 'r4':
         // 显示指定图片
-        fullPage.style.backgroundImage = 'url(https://oss.allintrip.cn/shanwentou/upfiles/onepage/20240481399209812.jpeg)';
+        fullPage.style.backgroundImage = 'url(https://oss.allintrip.cn/shanwentou/upfiles/onepage/20240441592859731.jpeg)';
         fullPage.style.backgroundSize = 'cover';
         fullPage.style.backgroundPosition = 'center';
         fullPage.style.backgroundRepeat = 'no-repeat';
@@ -335,6 +338,14 @@ window.addEventListener('DOMContentLoaded', function () {
         // 切换背景
         switchBackground(targetId);
 
+        // 重置轮播到第一张图片
+        if (targetId === 'r3' && window.resetR3Carousel) {
+          window.resetR3Carousel();
+        }
+        if (targetId === 'r4' && window.resetR4Carousel) {
+          window.resetR4Carousel();
+        }
+
         gsap.fromTo(targetModule,
           { opacity: 0, y: 50 },
           { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
@@ -352,12 +363,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const techItems = document.querySelectorAll('.tech-carousel .tech-item');
   if (!techItems.length) return;
   let current = 0;
+  let techTimer = null; // 添加定时器变量
+  
   // r3背景图数组
   const r3BgArr = [
     'https://oss.allintrip.cn/shanwentou/upfiles/solution/GQVMZVPJN3ND.png',
     'https://oss.allintrip.cn/shanwentou/upfiles/solution/NGJ305SJ7XT8.jpg',
     'https://oss.allintrip.cn/shanwentou/upfiles/solution/M69VK2DAQAMG.jpg'
   ];
+  
   function setR3Bg(idx) {
     const r3 = document.querySelector('.r3');
     const fullPage = document.querySelector('.fullPage');
@@ -383,25 +397,59 @@ document.addEventListener('DOMContentLoaded', function () {
       nextDiv.classList.remove('r3-bg-next');
     }, 950);
   }
+  
   function showTech(idx) {
     techItems.forEach((item, i) => {
       item.classList.toggle('active', i === idx);
     });
     setR3Bg(idx);
   }
+  
+  // 重置r3轮播到第一张
+  function resetR3Carousel() {
+    current = 0;
+    showTech(current);
+    
+    // 清除现有定时器
+    if (techTimer) {
+      clearInterval(techTimer);
+    }
+    
+    // 重新启动定时器
+    techTimer = setInterval(() => {
+      current = (current + 1) % techItems.length;
+      showTech(current);
+    }, 4000);
+  }
+  
   // r3初始时设置背景
   setR3Bg(0);
-  setInterval(() => {
+  
+  // 启动自动轮播
+  techTimer = setInterval(() => {
     current = (current + 1) % techItems.length;
     showTech(current);
   }, 4000);
+  
   // 点击item手动切换
   techItems.forEach((item, idx) => {
     item.addEventListener('click', () => {
       current = idx;
       showTech(current);
+      
+      // 重置定时器
+      if (techTimer) {
+        clearInterval(techTimer);
+      }
+      techTimer = setInterval(() => {
+        current = (current + 1) % techItems.length;
+        showTech(current);
+      }, 4000);
     });
   });
+  
+  // 将重置函数暴露到全局，供侧边栏导航使用
+  window.resetR3Carousel = resetR3Carousel;
 });
 
 // 产业布局轮播交互
@@ -409,6 +457,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const industryItems = document.querySelectorAll('.industry-carousel .industry-item');
   if (!industryItems.length) return;
   let currentIndustry = 0;
+  let industryTimer = null; // 添加定时器变量
   
   // r4背景图数组
   const r4BgArr = [
@@ -452,11 +501,28 @@ document.addEventListener('DOMContentLoaded', function () {
     setR4Bg(idx);
   }
   
+  // 重置r4轮播到第一张
+  function resetR4Carousel() {
+    currentIndustry = 0;
+    showIndustry(currentIndustry);
+    
+    // 清除现有定时器
+    if (industryTimer) {
+      clearInterval(industryTimer);
+    }
+    
+    // 重新启动定时器
+    industryTimer = setInterval(() => {
+      currentIndustry = (currentIndustry + 1) % industryItems.length;
+      showIndustry(currentIndustry);
+    }, 4000);
+  }
+  
   // r4初始时设置背景
   setR4Bg(0);
   
-  // 自动轮播
-  setInterval(() => {
+  // 启动自动轮播
+  industryTimer = setInterval(() => {
     currentIndustry = (currentIndustry + 1) % industryItems.length;
     showIndustry(currentIndustry);
   }, 4000);
@@ -466,6 +532,18 @@ document.addEventListener('DOMContentLoaded', function () {
     item.addEventListener('click', () => {
       currentIndustry = idx;
       showIndustry(currentIndustry);
+      
+      // 重置定时器
+      if (industryTimer) {
+        clearInterval(industryTimer);
+      }
+      industryTimer = setInterval(() => {
+        currentIndustry = (currentIndustry + 1) % industryItems.length;
+        showIndustry(currentIndustry);
+      }, 4000);
     });
   });
+  
+  // 将重置函数暴露到全局，供侧边栏导航使用
+  window.resetR4Carousel = resetR4Carousel;
 }); 

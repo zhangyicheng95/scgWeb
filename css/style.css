@@ -1430,7 +1430,7 @@ h3 {
   background-position: 32%;
   background-repeat: no-repeat;
   background-size: 100vw;
-  transition: all .8s;
+  transition: all 1s;
   border-radius: 2rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   padding: 2.5rem 4rem;
@@ -1443,19 +1443,20 @@ h3 {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
   opacity: 1;
   padding: 4rem 4rem;
-  width: 40rem;
+  max-width: 50rem;
   height: auto;
 }
 
 .industry-item .industry-desc {
   display: none;
   color: #666;
+  font-size: 2rem;
   margin-top: 2rem;
 }
 
 .industry-item .industry-title {
   display: none;
-  font-size: 2.4rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-top: 1rem;
   text-align: left;
