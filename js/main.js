@@ -247,6 +247,11 @@ window.addEventListener('DOMContentLoaded', function () {
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
           );
+          
+          // 触发移动端菜单按钮显示（如果存在）
+          if (window.triggerMobileMenuShow) {
+            window.triggerMobileMenuShow();
+          }
         }
       });
     });

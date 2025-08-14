@@ -218,65 +218,135 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* 响应式设计 */
+/* 移动端适配 - 保持原有设计风格 */
 @media (max-width: 768px) {
-  .header-nav {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.95);
+  .site-header {
+    height: 70px;
+  }
+  
+  .site-header:hover {
+    height: 70px;
     backdrop-filter: blur(10px);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    border-radius: 0;
   }
-
-  .nav-menu.active {
-    transform: translateX(0);
+  
+  .header-container {
+    height: 70px;
+    padding: 0 1rem;
   }
-
-  .nav-menu {
-    flex-direction: column;
-    padding: 2rem;
-    gap: 1rem;
+  
+  .logo-img {
+    height: 32px;
   }
-
-  .nav-item {
-    width: 100%;
+  
+  .logo-text {
+    font-size: 1.2rem;
   }
-
-  .nav-link {
-    display: block;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+  .logo-subtitle {
+    font-size: 0.6rem;
   }
-
-  .dropdown-menu {
-    position: static;
-    background: rgba(67, 206, 162, 0.1);
-    margin-top: 0.5rem;
-    border-radius: 4px;
+  
+  /* 移动端隐藏桌面端导航 */
+  .header-nav {
+    display: none;
   }
-
+  
+  /* 显示移动端菜单按钮 */
   .mobile-menu-toggle {
     display: flex;
   }
-
-  .header-container {
-    padding: 0 1rem;
+  
+  /* 移动端大面板菜单调整 - 保持原有风格 */
+  .mega-menu-panel {
+    top: 70px;
+    height: calc(100vh - 70px);
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: none; /* 默认隐藏，点击后显示 */
+  }
+  
+  .mega-menu-inner {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .mega-menu-col {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mega-menu-col li {
+    margin-bottom: 1rem;
+  }
+  
+  .mega-menu-col a {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-height: 44px; /* 触摸目标优化 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mega-menu-col a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
   }
 }
 
 @media (max-width: 480px) {
-  .logo-text {
-    font-size: 1.5rem;
+  .site-header {
+    height: 60px;
   }
-
-  .logo-subtitle {
-    font-size: 0.7rem;
-  }
-
+  
   .header-container {
     height: 60px;
+  }
+  
+  .logo-text {
+    font-size: 1rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.5rem;
+  }
+  
+  .mega-menu-panel {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+  
+  .mega-menu-inner {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .mega-menu-col a {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+}
+
+/* 触摸优化 - 保持原有交互逻辑 */
+@media (hover: none) and (pointer: coarse) {
+  .site-header:hover {
+    height: 70px;
+    backdrop-filter: blur(10px);
+    border-radius: 0;
+  }
+  
+  .mega-menu-col a:hover {
+    transform: none;
+  }
+  
+  /* 触摸反馈优化 */
+  .mega-menu-col a:active {
+    opacity: 0.7;
+    transform: scale(0.98);
   }
 }

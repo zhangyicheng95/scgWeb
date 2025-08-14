@@ -1,0 +1,343 @@
+/* 移动端额外样式补充 */
+
+/* 移动端菜单按钮 */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.mobile-menu-btn .hamburger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 5px auto;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* 移动端菜单 */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-nav-list li {
+  margin: 30px 0;
+}
+
+.mobile-nav-link {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 15px 30px;
+  display: block;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+/* 移动端状态管理 */
+.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* 移动端响应式显示 */
+@media screen and (max-width: 768px) {
+  .mobile-menu-btn {
+    display: none; /* 默认隐藏，由JavaScript控制显示 */
+  }
+  
+  .site-header {
+    height: 80px;
+  }
+  
+  .header-container {
+    height: 80px;
+    padding: 0 20px;
+  }
+  
+  /* 移动端Logo调整 */
+  .logo-img {
+    height: 30px;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.6rem;
+  }
+  
+  /* 移动端导航隐藏 */
+  .header-nav {
+    display: none;
+  }
+}
+
+/* 移动端触摸优化 */
+@media screen and (max-width: 768px) {
+  /* 触摸目标大小 */
+  .layer-icon,
+  .nav-link,
+  .sidebar-link,
+  .news-content-left,
+  .news-item {
+    min-height: 32px;
+    min-width: 32px;
+  }
+  
+  /* 触摸反馈 */
+  .layer-icon:active,
+  .nav-link:active,
+  .sidebar-link:active,
+  .news-content-left:active,
+  .news-item:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+  
+  /* 触摸滚动优化 */
+  .scrollable {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+}
+
+/* 移动端字体优化 */
+@media screen and (max-width: 768px) {
+  body * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* 移动端字体大小微调 */
+  .f-70 { font-size: 3.2rem !important; }
+  .f-56 { font-size: 2.4rem !important; }
+  .f-36 { font-size: 1.6rem !important; }
+  .f-26 { font-size: 1.2rem !important; }
+  .f-24 { font-size: 1.1rem !important; }
+  .f-18 { font-size: 0.85rem !important; }
+  .f-14 { font-size: 0.65rem !important; }
+  .f-12 { font-size: 0.55rem !important; }
+}
+
+/* 移动端间距优化 */
+@media screen and (max-width: 768px) {
+  .section-content {
+    padding: 30px 20px !important;
+  }
+  
+  .r2-content,
+  .tech-carousel,
+  .industry-carousel {
+    gap: 25px !important;
+  }
+  
+  .home-grid-sub {
+    gap: 15px !important;
+  }
+  
+  .news-content,
+  .news-content-2 {
+    gap: 20px !important;
+  }
+}
+
+/* 移动端图片优化 */
+@media screen and (max-width: 768px) {
+  
+  .news-content-left-icon img {
+    height: 180px !important;
+  }
+  
+  .news-main-img {
+    height: 180px !important;
+  }
+  
+  .news-item-img {
+    width: 70px !important;
+    height: 52px !important;
+  }
+}
+
+/* 移动端动画优化 */
+@media screen and (max-width: 768px) {
+  .secondAlan {
+    animation-duration: 1.2s !important;
+  }
+  
+  .tech-item,
+  .industry-item {
+    transition: all 0.3s ease !important;
+  }
+  
+  .tech-item:hover,
+  .industry-item:hover {
+    transform: translateY(-3px) !important;
+  }
+}
+
+/* 移动端加载动画优化 */
+@media screen and (max-width: 768px) {
+  #loading .set {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #loading .set .f-36 {
+    font-size: 1.8rem !important;
+  }
+  
+  #loading .set .f-100 {
+    font-size: 2.8rem !important;
+  }
+  
+  #loading .bm h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.3;
+    padding: 0 15px;
+  }
+  
+  #loading .bm p {
+    font-size: 0.8rem !important;
+    margin: 8px 0;
+  }
+}
+
+/* 移动端横屏适配 */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .mobile-menu {
+    padding: 20px;
+  }
+  
+  .mobile-nav-list li {
+    margin: 15px 0;
+  }
+  
+  .mobile-nav-link {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+  
+  .section-content {
+    padding: 15px !important;
+  }
+  
+  .r2 .til,
+  .r3 .til,
+  .r4 .til,
+  .r5 .til {
+    font-size: 1.5rem !important;
+    margin-bottom: 15px;
+  }
+}
+
+/* 移动端高分辨率屏幕优化 */
+@media screen and (min-resolution: 2dppx) {
+  .tech-icon img,
+  .industry-icon img,
+  .news-content-left-icon img,
+  .news-main-img,
+  .news-item-img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* 移动端无障碍优化 */
+@media screen and (max-width: 768px) {
+  .layer-icon,
+  .nav-link,
+  .sidebar-link {
+    outline: none;
+  }
+  
+  .layer-icon:focus,
+  .nav-link:focus,
+  .sidebar-link:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+  }
+}
+
+/* 移动端性能优化 */
+@media screen and (max-width: 768px) {
+  .mobile-optimized {
+    will-change: auto;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  /* 减少移动端阴影复杂度 */
+  .frosted-glass,
+  .frosted-glass-strong {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,564 @@
+/* 移动端适配样式 */
+/* 基础移动端设置 */
+@media screen and (max-width: 768px) {
+
+    /* 字体大小调整 */
+    .f-150 {
+        font-size: 8rem !important;
+    }
+
+    .f-120 {
+        font-size: 6rem !important;
+    }
+
+    .f-100 {
+        font-size: 5rem !important;
+    }
+
+    .f-90 {
+        font-size: 4.5rem !important;
+    }
+
+    .f-80 {
+        font-size: 4rem !important;
+    }
+
+    .f-70 {
+        font-size: 3.5rem !important;
+    }
+
+    .f-64 {
+        font-size: 3.2rem !important;
+    }
+
+    .f-60 {
+        font-size: 3rem !important;
+    }
+
+    .f-56 {
+        font-size: 2.8rem !important;
+    }
+
+    .f-54 {
+        font-size: 2.7rem !important;
+    }
+
+    .f-50 {
+        font-size: 2.5rem !important;
+    }
+
+    .f-48 {
+        font-size: 2.4rem !important;
+    }
+
+    .f-46 {
+        font-size: 2.3rem !important;
+    }
+
+    .f-44 {
+        font-size: 2.2rem !important;
+    }
+
+    .f-42 {
+        font-size: 2.1rem !important;
+    }
+
+    .f-40 {
+        font-size: 2rem !important;
+    }
+
+    .f-38 {
+        font-size: 1.9rem !important;
+    }
+
+    .f-36 {
+        font-size: 1.8rem !important;
+    }
+
+    .f-34 {
+        font-size: 1.7rem !important;
+    }
+
+    .f-32 {
+        font-size: 1.6rem !important;
+    }
+
+    .f-30 {
+        font-size: 1.5rem !important;
+    }
+
+    .f-28 {
+        font-size: 1.4rem !important;
+    }
+
+    .f-26 {
+        font-size: 1.3rem !important;
+    }
+
+    .f-24 {
+        font-size: 1.2rem !important;
+    }
+
+    .f-22 {
+        font-size: 1.1rem !important;
+    }
+
+    .f-20 {
+        font-size: 1rem !important;
+    }
+
+    .f-18 {
+        font-size: 0.9rem !important;
+    }
+
+    .f-16 {
+        font-size: 0.8rem !important;
+    }
+
+    .f-14 {
+        font-size: 0.7rem !important;
+    }
+
+    .f-12 {
+        font-size: 0.6rem !important;
+    }
+
+    .f-10 {
+        font-size: 0.5rem !important;
+    }
+
+    /* 开屏动画移动端优化 */
+    #loading {
+        padding: 20px;
+    }
+
+    #loading .bm h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.4;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    #loading .bm p {
+        font-size: 0.9rem !important;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* 首页内容移动端适配 */
+    #fullpage {
+        min-height: 100vh;
+    }
+
+    .banner-titles {
+        width: calc(100% - 2vw);
+        overflow-x: auto;
+        top: 100px;
+        left: 1vw;
+        right: 1vw;
+        bottom: auto;
+    }
+
+    .banner-title-btn {
+        font-size: .75rem;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        padding: .5vw 1vw;
+    }
+
+    .banner-content {
+        max-width: calc(100vw - 2vw);
+        top: calc(100px + 3rem);
+        left: 1vw;
+        right: 1vw;
+        bottom: auto;
+    }
+
+    .banner-desc {
+        width: 100%;
+        font-size: 2rem;
+        white-space: normal;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 走进文投模块移动端 */
+    .r2 .section-content {
+        padding: 40px 20px;
+    }
+
+    .r2 .til {
+        font-size: 2.5rem !important;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .r2-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .section-content p {
+        max-width: 100%;
+    }
+
+    .home-grid-sub-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .home-grid-sub {
+        gap: 15px;
+    }
+
+    .home-grid-sub-center-item {
+        padding: 10px;
+        text-align: center;
+        font-size: 1rem !important;
+    }
+
+    .home-grid-sub-item {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .home-grid-sub-item-right-title-content {
+        font-size: 2rem !important;
+    }
+
+    /* 文旅科技模块移动端 */
+    .r3 .section-content,
+    .r4 .section-content {
+        padding: 40px 20px;
+    }
+
+    .tech-carousel,
+    .industry-carousel {
+        flex-direction: column;
+        gap: .8rem;
+    }
+
+    .tech-item,
+    .industry-item {
+        width: 100%;
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    .tech-icon img,
+    .industry-icon img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .tech-item .tech-icon {
+        height: auto !important;
+        margin-top: .5rem;
+        margin-bottom: 0 !important;
+    }
+
+    .r3-more {
+        right: 1.5rem;
+        height: 4rem;
+        width: 4rem;
+        border-radius: .8rem;
+        gap: 0;
+    }
+
+    .layer-icon svg {
+        width: 1rem;
+    }
+
+    .tech-title,
+    .industry-title {
+        font-size: 1.5rem !important;
+    }
+
+    .tech-desc,
+    .industry-desc {
+        font-size: 0.9rem !important;
+        line-height: 1.6;
+        border-radius: 1rem !important;
+        margin-top: .5rem !important;
+    }
+
+    /* 新闻动态模块移动端 */
+    .r5 .section-content {
+        padding: 40px 20px;
+    }
+
+    .title-box {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .news-toggle-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .radio-toggle-group {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .news-content,
+    .news-content-2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .news-content-left,
+    .news-item-2 {
+        width: 100%;
+    }
+
+    .news-content-left-icon img,
+    .news-main-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .news-content-left-title {
+        font-size: 1.1rem !important;
+        line-height: 1.4;
+    }
+
+    .news-item {
+        padding: 15px;
+    }
+
+    .news-item-img {
+        width: 80px;
+        height: 60px;
+        object-fit: cover;
+    }
+
+    /* 侧边栏移动端隐藏 */
+    .public-sidebar {
+        display: none !important;
+    }
+
+    /* 视频背景移动端优化 */
+    .fullPage video {
+        object-fit: cover;
+    }
+
+    #firstGo {
+        gap: 3rem;
+    }
+
+    .layer-icon {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    /* 触摸优化 */
+    .layer-icon,
+    .nav-link,
+    .sidebar-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* 移动端滚动优化 */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 移动端阴影和模糊效果优化 */
+    .frosted-glass,
+    .frosted-glass-strong {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* 小屏手机适配 */
+@media screen and (max-width: 480px) {
+
+    .r2 .til,
+    .r3 .til,
+    .r4 .til,
+    .r5 .til {
+        font-size: 2rem !important;
+    }
+
+    .home-grid-sub-center-item {
+        padding: 8px;
+        font-size: 0.9rem !important;
+    }
+
+    .tech-item,
+    .industry-item {
+        padding: 20px 15px;
+    }
+
+    .news-content-left-title {
+        font-size: 1rem !important;
+    }
+
+    .news-item-img {
+        width: 60px;
+        height: 45px;
+    }
+}
+
+/* 横屏模式适配 */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    #loading .bm h2 {
+        font-size: 1.2rem !important;
+    }
+
+    #loading .bm p {
+        font-size: 0.7rem !important;
+    }
+
+    .r2 .til,
+    .r3 .til,
+    .r4 .til,
+    .r5 .til {
+        font-size: 1.8rem !important;
+    }
+
+    .section-content {
+        padding: 20px !important;
+    }
+}
+
+/* 高分辨率屏幕优化 */
+@media screen and (min-resolution: 2dppx) {
+
+    .tech-icon img,
+    .industry-icon img,
+    .news-content-left-icon img,
+    .news-main-img,
+    .news-item-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* 移动端动画优化 */
+@media screen and (max-width: 768px) {
+    .secondAlan {
+        animation-duration: 1.5s !important;
+    }
+
+    /* 减少移动端动画复杂度 */
+    .tech-item,
+    .industry-item {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .tech-item:hover,
+    .industry-item:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* 移动端加载动画优化 */
+@media screen and (max-width: 768px) {
+    .loadFrame {
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+    .set {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .set .f-36 {
+        font-size: 2rem !important;
+    }
+
+    .set .f-100 {
+        font-size: 3rem !important;
+    }
+}
+
+/* 移动端触摸反馈 */
+@media screen and (max-width: 768px) {
+
+    .layer-icon:active,
+    .nav-link:active,
+    .sidebar-link:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+    .news-content-left:active,
+    .news-item:active {
+        opacity: 0.8;
+        transition: opacity 0.1s ease;
+    }
+}
+
+/* 移动端字体渲染优化 */
+@media screen and (max-width: 768px) {
+    body * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+}
+
+/* 隐藏滚动条样式 */
+/* Webkit浏览器 (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Firefox浏览器 */
+* {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+/* 特定元素的滚动条隐藏 */
+.banner-titles::-webkit-scrollbar,
+.news-content::-webkit-scrollbar,
+.mobile-menu-panel::-webkit-scrollbar,
+.tech-carousel::-webkit-scrollbar,
+.industry-carousel::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+/* 保持滚动功能但隐藏滚动条 */
+.scrollable {
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}

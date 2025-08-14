@@ -318,6 +318,7 @@ h3 {
 }
 
 #fullpage {
+  height: 101vh;
   opacity: 0;
   transition: opacity 1.2s, transform 1.2s;
   background-color: #000;
@@ -328,7 +329,7 @@ h3 {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 101vh;
   z-index: 0;
 }
 
@@ -348,7 +349,7 @@ h3 {
 .banner-slide {
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   left: 0;
   top: 0;
   background-size: cover;
@@ -479,7 +480,7 @@ h3 {
   margin-left: 250px;
   margin-top: 5vw;
   height: calc(100vh - 5vw);
-  width: calc(100vw - 300px);
+  width: 100%;
 }
 
 #firstGo {
@@ -488,6 +489,7 @@ h3 {
   bottom: 4vw;
   padding: 10px 10px 10px 2rem;
   z-index: 10;
+  gap: 6rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -511,7 +513,6 @@ h3 {
   height: 5rem;
   background-color: #4a93f9;
   border-radius: 1.4rem;
-  margin-left: 6rem;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -1529,6 +1530,7 @@ h3 {
   mix-blend-mode: lighten;
   pointer-events: none;
 }
+
 /* 进度条样式 */
 .progress-bar {
   position: absolute;
@@ -1556,4 +1558,61 @@ h3 {
 
 .progress-fill.animate {
   width: 100%;
+}
+
+/* 隐藏滚动条样式 - 全局生效 */
+/* Webkit浏览器 (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox浏览器 */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* 特定元素的滚动条隐藏 */
+.banner-titles::-webkit-scrollbar,
+.news-content::-webkit-scrollbar,
+.mobile-menu-panel::-webkit-scrollbar,
+.tech-carousel::-webkit-scrollbar,
+.industry-carousel::-webkit-scrollbar,
+.fullPage::-webkit-scrollbar,
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* 保持滚动功能但隐藏滚动条 */
+.scrollable {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
 }
