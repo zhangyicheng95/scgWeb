@@ -189,7 +189,8 @@
 }
 
 /* 移动端菜单按钮 */
-.mobile-menu-toggle {
+.mobile-menu-toggle,
+.mobile-menu-btn {
   display: none;
   flex-direction: column;
   background: none;
@@ -253,7 +254,8 @@
   }
   
   /* 显示移动端菜单按钮 */
-  .mobile-menu-toggle {
+  .mobile-menu-toggle,
+  .mobile-menu-btn {
     display: flex;
   }
   
@@ -335,7 +337,6 @@
 /* 触摸优化 - 保持原有交互逻辑 */
 @media (hover: none) and (pointer: coarse) {
   .site-header:hover {
-    height: 70px;
     backdrop-filter: blur(10px);
     border-radius: 0;
   }

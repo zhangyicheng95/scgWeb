@@ -327,12 +327,14 @@ window.addEventListener('DOMContentLoaded', function () {
       // 添加active类到当前点击的链接
       this.classList.add('active');
 
-      // 隐藏所有模块
+      // 隐藏所有模块并停止相关轮播
       [r2, r3, r4, r5].forEach(module => {
         if (module) {
           module.style.display = 'none';
         }
       });
+      if (window.r3Carousel) window.r3Carousel.stop();
+      if (window.r4Carousel) window.r4Carousel.stop();
 
       // 显示对应的模块
       const targetId = this.getAttribute('href').substring(1);
@@ -344,11 +346,12 @@ window.addEventListener('DOMContentLoaded', function () {
         switchBackground(targetId);
 
         // 重置轮播到第一张图片
-        if (targetId === 'r3' && window.resetR3Carousel) {
-          window.resetR3Carousel();
+        // 启动并重置目标模块的轮播
+        if (targetId === 'r3' && window.r3Carousel) {
+          window.r3Carousel.reset();
         }
-        if (targetId === 'r4' && window.resetR4Carousel) {
-          window.resetR4Carousel();
+        if (targetId === 'r4' && window.r4Carousel) {
+          window.r4Carousel.reset();
         }
 
         gsap.fromTo(targetModule,
@@ -453,8 +456,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   
-  // 将重置函数暴露到全局，供侧边栏导航使用
-  window.resetR3Carousel = resetR3Carousel;
+  // 停止r3轮播
+  function stopR3Carousel() {
+    if (techTimer) {
+      clearInterval(techTimer);
+      techTimer = null;
+    }
+  }
+
+  // 将控制函数暴露到全局
+  window.r3Carousel = {
+    reset: resetR3Carousel,
+    stop: stopR3Carousel
+  };
 });
 
 // 产业布局轮播交互
@@ -549,6 +563,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   
-  // 将重置函数暴露到全局，供侧边栏导航使用
-  window.resetR4Carousel = resetR4Carousel;
+  // 停止r4轮播
+  function stopR4Carousel() {
+    if (industryTimer) {
+      clearInterval(industryTimer);
+      industryTimer = null;
+    }
+  }
+
+  // 将控制函数暴露到全局
+  window.r4Carousel = {
+    reset: resetR4Carousel,
+    stop: stopR4Carousel
+  };
 }); 

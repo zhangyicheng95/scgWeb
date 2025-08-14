@@ -7,7 +7,9 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>SCG 官网开屏动画</title>
+  <title>陕西文投集团官网 | 陕西省文化产业投资控股（集团）有限公司</title>
+  <meta name="description" content="陕西文化产业投资控股（集团）有限公司（简称“陕文投集团”）成立于2009年6月，是陕西省属国有大型文化企业，是陕西实施“文化强省”战略的重要市场平台。">
+  <meta name="keywords" content="陕文投, 陕西文投, 陕西文化产业投资, 文化产业, 文旅科技, 文化金融">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/mobile.css">
@@ -292,21 +294,15 @@
       <div class="flex-box title-box">
         <h3 class="til f-70 font_m wc secondAlan">新闻动态</h3>
         <div class="news-toggle-container">
-          <div class="radio-toggle-group">
-            <input type="radio" id="listView" name="newsView" value="list" checked>
-            <label for="listView" class="radio-toggle-btn">
-              <span class="toggle-text">集团要闻</span>
-            </label>
-            <input type="radio" id="gridView" name="newsView" value="grid">
-            <label for="gridView" class="radio-toggle-btn">
-              <span class="toggle-text">公司动态</span>
-            </label>
+          <div class="div-toggle-group">
+            <div class="toggle-btn active" data-view="list">集团要闻</div>
+            <div class="toggle-btn" data-view="grid">公司动态</div>
           </div>
         </div>
       </div>
 
       <div class="news-content" id="newsContent">
-        <a class="news-content-left" href="./about/news/124.html">
+        <a class="news-content-left" href="./news/1.html">
           <div class="news-content-left-icon">
             <img src="
 https://oss.allintrip.cn/shanwentou/upfiles/news/DJD5SMSQRY1P.png" alt="">
@@ -328,7 +324,7 @@ https://oss.allintrip.cn/shanwentou/upfiles/news/DJD5SMSQRY1P.png" alt="">
         </a>
         <div class="news-content-right">
           <div class="news-item-2">
-            <a class="news-main" href="./about/news/124.html">
+            <a class="news-main" href="./news/1.html">
               <img class="news-main-img" src="
 https://oss.allintrip.cn/shanwentou/upfiles/news/202507181429257909.jpg" alt="大新闻图片">
               <span class="f-10 top-icon">热</span>
@@ -340,7 +336,7 @@ https://oss.allintrip.cn/shanwentou/upfiles/news/202507181429257909.jpg" alt="�
               </div>
             </a>
             <div class="news-list">
-              <a class="news-item" href="./about/news/122.html">
+              <a class="news-item" href="./news/122.html">
                 <img class="news-item-img" src="
 https://oss.allintrip.cn/shanwentou/upfiles/news/202504090932092167.jpg" alt="新闻图片">
                 <div class="news-item-info">
@@ -351,7 +347,7 @@ https://oss.allintrip.cn/shanwentou/upfiles/news/202504090932092167.jpg" alt="�
                 </div>
               </a>
               <div class="item-line"></div>
-              <a class="news-item" href="./about/news/121.html">
+              <a class="news-item" href="./news/121.html">
                 <img class="news-item-img" src="https://oss.allintrip.cn/shanwentou/upfiles/news/202507230840509091.jpg"
                   alt="新闻图片">
                 <div class="news-item-info">
@@ -361,7 +357,7 @@ https://oss.allintrip.cn/shanwentou/upfiles/news/202504090932092167.jpg" alt="�
                 </div>
               </a>
               <div class="item-line"></div>
-              <a class="news-item" href="./about/news/124.html">
+              <a class="news-item" href="./news/1.html">
                 <img class="news-item-img" src="
 https://oss.allintrip.cn/shanwentou/upfiles/news/202504211015051481.jpg" alt="新闻图片">
                 <div class="news-item-info">
@@ -657,54 +653,44 @@ https://oss.allintrip.cn/shanwentou/upfiles/news/202507111744402900.jpg" alt="�
 
   // 页面加载完成后初始化
   document.addEventListener('DOMContentLoaded', function () {
-    // 确保初始状态正确
+    const toggleButtons = document.querySelectorAll('.div-toggle-group .toggle-btn');
     const newsContent2 = document.getElementById('newsContent2');
     const newsContent = document.getElementById('newsContent');
 
-    if (newsContent2 && newsContent) {
-      newsContent2.style.setProperty('display', 'none', 'important');
-      newsContent.style.setProperty('display', 'flex', 'important');
-      newsContent.style.opacity = '1';
-      newsContent.style.transform = 'translateY(0) scale(1)';
-      console.log('新闻切换功能已初始化 - 默认显示列表视图');
-    }
+    // 初始状态
+    if (newsContent) newsContent.style.display = 'flex';
+    if (newsContent2) newsContent2.style.display = 'none';
 
-    // 绑定radio按钮事件
-    const gridViewRadio = document.getElementById('gridView');
-    const listViewRadio = document.getElementById('listView');
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        if (this.classList.contains('active')) {
+          return;
+        }
 
-    if (gridViewRadio) {
-      gridViewRadio.addEventListener('change', function () {
-        if (this.checked) {
-          toggleNewsView('grid');
+        toggleButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        const view = this.getAttribute('data-view');
+        if (view === 'list') {
+          if (newsContent) newsContent.style.display = 'flex';
+          if (newsContent2) newsContent2.style.display = 'none';
+        } else if (view === 'grid') {
+          if (newsContent) newsContent.style.display = 'none';
+          if (newsContent2) newsContent2.style.display = 'flex';
         }
       });
-    }
-
-    if (listViewRadio) {
-      listViewRadio.addEventListener('change', function () {
-        if (this.checked) {
-          toggleNewsView('list');
-        }
-      });
-    }
-
-    // 添加键盘快捷键支持 (G键切换)
-    document.addEventListener('keydown', function (e) {
-      if (e.key.toLowerCase() === 'g' && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault();
-        // 切换radio状态
-        if (gridViewRadio && listViewRadio) {
-          if (gridViewRadio.checked) {
-            listViewRadio.checked = true;
-            toggleNewsView('list');
-          } else {
-            gridViewRadio.checked = true;
-            toggleNewsView('grid');
-          }
-        }
-      }
     });
+
+    // 返回按钮逻辑 (现在重置div按钮的状态)
+    const backButton = document.querySelector('.back-button');
+    if (backButton) {
+      backButton.addEventListener('click', function() {
+        const listButton = document.querySelector('.toggle-btn[data-view="list"]');
+        if (listButton && !listButton.classList.contains('active')) {
+            listButton.click(); // 模拟点击“集团要闻”按钮
+        }
+      });
+    }
   });
 </script>
 

@@ -181,11 +181,6 @@
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
-    /* 走进文投模块移动端 */
-    .r2 .section-content {
-        padding: 40px 20px;
-    }
-
     .r2 .til {
         font-size: 2.5rem !important;
         margin-bottom: 30px;
@@ -193,15 +188,19 @@
     }
 
     .r2-content {
+        flex: 1;
         flex-direction: column;
+        justify-content: space-around;
         gap: 30px;
     }
 
     .section-content p {
         max-width: 100%;
+        min-height: 250px;
     }
 
     .home-grid-sub-box {
+        height: auto;
         flex-direction: column;
         gap: 20px;
     }
@@ -234,14 +233,38 @@
     .tech-carousel,
     .industry-carousel {
         flex-direction: column;
+        justify-content: flex-end;
         gap: .8rem;
+        margin-top: 1rem !important;
     }
 
-    .tech-item,
-    .industry-item {
+    .tech-item {
+        flex: 0;
         width: 100%;
+        /* width: auto; */
         padding: 25px 20px;
         text-align: center;
+        border-radius: 1rem;
+    }
+
+    .industry-item {
+        padding: 25px 20px;
+        text-align: center;
+        border-radius: 1rem;
+    }
+
+    .industry-item .industry-icon {
+        height: auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    .industry-item.active .industry-icon {
+        height: auto !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .industry-item.active {
+        padding: 1rem;
     }
 
     .tech-icon img,
@@ -252,8 +275,12 @@
 
     .tech-item .tech-icon {
         height: auto !important;
-        margin-top: .5rem;
         margin-bottom: 0 !important;
+    }
+
+    .tech-item.active {
+        width: 100%;
+        flex: 0;
     }
 
     .r3-more {
@@ -271,6 +298,7 @@
     .tech-title,
     .industry-title {
         font-size: 1.5rem !important;
+        margin-top: 0 !important;
     }
 
     .tech-desc,
@@ -287,19 +315,29 @@
     }
 
     .title-box {
-        flex-direction: column;
         gap: 20px;
-        text-align: center;
+        align-items: flex-start;
     }
 
     .news-toggle-container {
-        width: 100%;
-        justify-content: center;
+        margin-top: 0;
     }
 
-    .radio-toggle-group {
+    .div-toggle-group {
         width: 100%;
-        max-width: 300px;
+        max-width: 400px;
+        /* 在移动端可以更宽 */
+        border-radius: 30px;
+    }
+
+    .toggle-btn {
+        flex: 1;
+        /* 让两个按钮平分宽度 */
+        padding: 15px 10px;
+        /* 调整垂直内边距，使其更高 */
+        font-size: 1.1rem;
+        /* 进一步增大移动端字体 */
+        font-weight: bold;
     }
 
     .news-content,
@@ -316,7 +354,7 @@
     .news-content-left-icon img,
     .news-main-img {
         width: 100%;
-        height: 200px;
+        height: 100%;
         object-fit: cover;
     }
 
@@ -325,14 +363,51 @@
         line-height: 1.4;
     }
 
+    .news-content {
+        justify-content: flex-end;
+    }
+
+    .news-content-left {
+        height: 60%;
+    }
+
+    .news-content-left-icon {
+        align-items: flex-start;
+    }
+
+    .news-content-right {
+        display: none;
+    }
+
     .news-item {
-        padding: 15px;
+        padding: 0px;
     }
 
     .news-item-img {
         width: 80px;
         height: 60px;
         object-fit: cover;
+    }
+
+    .news-content-2 {
+        justify-content: flex-end;
+    }
+
+    .news-item-2:nth-child(2),
+    .news-item-2:nth-child(3) {
+        display: none;
+    }
+
+    #newsContent2 .news-item-2 {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        justify-content: space-between;
+        flex: 0;
+    }
+
+    .news-main {
+        height: 35%;
     }
 
     /* 侧边栏移动端隐藏 */
@@ -392,7 +467,7 @@
 
     .tech-item,
     .industry-item {
-        padding: 20px 15px;
+        padding: 15px;
     }
 
     .news-content-left-title {
