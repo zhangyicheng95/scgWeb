@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - SCG</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/contact-us.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+
+    <main class="contact-main">
+        <div class="contact-container">
+            <section class="contact-info-section" data-aos="fade-up">
+                <div class="title-block">
+                    <h2 class="f-60">联系我们</h2>
+                    <p class="f-12 subtitle">Contact Us</p>
+                </div>
+                <div class="info-content">
+                    <h3 class="f-20">陕西省文化产业投资控股（集团）有限公司</h3>
+                    <p class="f-12">地址：陕西省西安市雁塔南路300-9号陕西文化大厦</p>
+                    <p class="f-12">电话：029-85358099</p>
+                    <p class="f-12">邮箱：<a href="mailto:http://mail.shanwentou.com.cn">http://mail.shanwentou.com.cn</a>
+                    </p>
+                </div>
+            </section>
+
+            <section class="contact-form-section" data-aos="fade-in" data-aos-delay="200">
+                <div class="title-block">
+                    <h2 class="f-60">成为合作伙伴</h2>
+                    <p class="f-12 subtitle">Become Our Partner</p>
+                </div>
+                <div class="partner-form">
+                    <p class="f-20 form-intro">填写此表格，我们将立即与您联系</p>
+                    <form action="#" method="post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="interest">您对哪方面感兴趣：</label>
+                                <select id="interest" name="interest">
+                                    <option value="short-video">合作拍短视频</option>
+                                    <option value="investment">项目投资</option>
+                                    <option value="marketing">市场合作</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">公司：</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">姓名：</label>
+                                <input type="text" id="name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="position">职务：</label>
+                                <input type="text" id="position" name="position">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">邮箱：</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">电话：</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                提交
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800, // Animation duration
+        once: true, // Whether animation should happen only once
+    });
+</script>
+
+</html>

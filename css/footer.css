@@ -1,0 +1,218 @@
+/* Site Footer Styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-footer {
+    background-image: url('https://oss.allintrip.cn/shanwentou/templates/image/foot.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 5rem 5rem;
+    position: relative;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 1rem;
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 48, 58, 0.85);
+    z-index: 1;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-logo-section {
+    flex-basis: 30%;
+}
+
+.footer-logo {
+    width: 15rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-social-icons {
+    text-align: left;
+}
+
+.social-icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.qr-popup {
+    display: none;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+}
+
+.qr-popup.show {
+    display: block;
+}
+
+.qr-popup img {
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+
+.qr-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.footer-social-icons a {
+    margin-right: 2rem;
+}
+
+.footer-social-icons svg {
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.footer-social-icons svg:hover {
+    opacity: 1;
+}
+
+.footer-social-icons .iconfont {
+    font-size: 2.8rem;
+    /* Match image width */
+    color: #fff;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    vertical-align: middle;
+    /* Align with image */
+}
+
+.footer-social-icons a:hover .iconfont {
+    opacity: 1;
+}
+
+.footer-nav-section {
+    display: flex;
+    gap: 5rem;
+}
+
+.footer-nav-col h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.footer-nav-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-col li {
+    margin-bottom: 1rem;
+}
+
+.footer-nav-col a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav-col a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 2rem;
+    color: rgba(255, 255, 255, .5);
+}
+
+.footer-copyright p {
+    margin: 0.5rem 0;
+}
+
+.footer-copyright a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer-legal a:hover {
+    color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 12vw 5vw;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo-section {
+        margin-bottom: 3rem;
+    }
+
+    .footer-nav-section {
+        gap: 3rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column-reverse;
+        /* text-align: center; */
+        gap: 1.5rem;
+    }
+
+    .footer-legal a {
+        margin: 0 0.75rem;
+    }
+}

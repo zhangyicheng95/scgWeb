@@ -4,12 +4,26 @@ body {
   padding: 0;
   overflow: hidden;
   color: #fff;
+  /* 禁用iOS弹性滚动 */
+  overscroll-behavior: none;
 }
 
 body * {
   box-sizing: border-box;
   font-family: Source Han Sans CN, Microsoft JhengHei, PingFang SC, Source Han Serif SC, Microsoft YaHei, sans-serif;
   text-decoration: none;
+  -webkit-user-drag: none;
+}
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';
+  /* Project id 611922 */
+  src: url('//at.alicdn.com/t/font_611922_rrzxbbqyrxl.eot');
+  src: url('//at.alicdn.com/t/font_611922_rrzxbbqyrxl.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_611922_rrzxbbqyrxl.woff') format('woff'),
+    url('//at.alicdn.com/t/font_611922_rrzxbbqyrxl.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_611922_rrzxbbqyrxl.svg#iconfont') format('svg');
 }
 
 h1,
@@ -45,126 +59,126 @@ h3 {
 
 .f-150 {
   letter-spacing: -.1rem;
-  font-size: 15rem
+  font-size: 15rem !important;
 }
 
 .f-120 {
-  font-size: 12rem
+  font-size: 12rem !important;
 }
 
 .f-100 {
-  font-size: 10rem
+  font-size: 10rem !important;
 }
 
 .f-90 {
   letter-spacing: -.4rem;
-  font-size: 9rem
+  font-size: 9rem !important;
 }
 
 .f-80 {
-  font-size: 8rem
+  font-size: 8rem !important;
 }
 
 .f-70 {
-  font-size: 7rem
+  font-size: 7rem !important;
 }
 
 .f-64 {
-  font-size: 6.4rem
+  font-size: 6.4rem !important;
 }
 
 .f-60 {
-  font-size: 6rem
+  font-size: 6rem !important;
 }
 
 .f-56 {
-  font-size: 5.6rem
+  font-size: 5.6rem !important;
 }
 
 .f-54 {
-  font-size: 5.4rem
+  font-size: 5.4rem !important;
 }
 
 .f-50 {
-  font-size: 5rem
+  font-size: 5rem !important;
 }
 
 .f-48 {
-  font-size: 4.8rem
+  font-size: 4.8rem !important;
 }
 
 .f-46 {
-  font-size: 4.6rem
+  font-size: 4.6rem !important;
 }
 
 .f-44 {
-  font-size: 4.4rem
+  font-size: 4.4rem !important;
 }
 
 .f-42 {
-  font-size: 4.2rem
+  font-size: 4.2rem !important;
 }
 
 .f-40 {
-  font-size: 4rem
+  font-size: 4rem !important;
 }
 
 .f-38 {
-  font-size: 3.8rem
+  font-size: 3.8rem !important;
 }
 
 .f-36 {
-  font-size: 3.6rem
+  font-size: 3.6rem !important;
 }
 
 .f-34 {
-  font-size: 3.4rem
+  font-size: 3.4rem !important;
 }
 
 .f-32 {
-  font-size: 3.2rem
+  font-size: 3.2rem !important;
 }
 
 .f-30 {
-  font-size: 3rem
+  font-size: 3rem !important;
 }
 
 .f-28,
 .solutionDetail .r2 .inner .group .cir:after {
-  font-size: 2.8rem
+  font-size: 2.8rem !important;
 }
 
 .f-26 {
-  font-size: 2.6rem
+  font-size: 2.6rem !important;
 }
 
 .f-24 {
-  font-size: 2.4rem
+  font-size: 2.4rem !important;
 }
 
 .f-22 {
-  font-size: 2.2rem
+  font-size: 2.2rem !important;
 }
 
 .f-20 {
-  font-size: 2rem
+  font-size: 2rem !important;
 }
 
 .f-18 {
-  font-size: 1.8rem
+  font-size: 1.8rem !important;
 }
 
 .f-16 {
-  font-size: 1.6rem
+  font-size: 1.6rem !important;
 }
 
 .f-14,
 .factory .r1 .second>h3:after {
-  font-size: 1.4rem
+  font-size: 1.4rem !important;
 }
 
 .f-12 {
-  font-size: 1.2rem
+  font-size: 1.2rem !important;
 }
 
 .flex-box {
@@ -1469,6 +1483,7 @@ h3 {
   color: #666;
   font-size: 2rem;
   margin-top: 2rem;
+  text-align: left;
 }
 
 .industry-item .industry-title {

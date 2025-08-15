@@ -1,0 +1,215 @@
+/* Contact Us Page Styles */
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: AlibabaFangYuanTi;
+    color: #333;
+    line-height: 1.6;
+    overflow-y: auto;
+}
+
+.contact-main {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('https://oss.allintrip.cn/shanwentou/upfiles/onepage/VMJ31B3D5TUR.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0;
+    color: #333;
+}
+
+.contact-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.contact-info-section,
+.contact-form-section {
+    padding: 4rem;
+    width: 50%;
+}
+
+.contact-form-section {
+    padding: 4rem;
+    width: 50%;
+}
+
+.contact-info-section {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.title-block {
+    margin-bottom: 10rem;
+}
+
+.title-block h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #003366;
+    margin: 0;
+}
+
+.title-block .subtitle {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+}
+
+.title-block .subtitle::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #004A45;
+    /* Dark Teal Color */
+    border-radius: 50%;
+    margin-right: 0.6rem;
+}
+
+.info-content h3 {
+    font-size: 1.1rem;
+    color: #3A5F8A;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.info-content p {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: #444;
+}
+
+.info-content a {
+    color: #005A9C;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.info-content a:hover {
+    color: #003366;
+}
+
+.partner-form {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 70%;
+}
+
+.form-intro {
+    font-size: 0.9rem;
+    color: #5A7D9A;
+    /* Muted Blue/Gray */
+    margin-bottom: 2rem;
+    margin-top: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.6rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.8rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #005A9C;
+    box-shadow: 0 0 0 3px rgba(0, 90, 156, 0.1);
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.submit-btn {
+    background-color: #005A9C;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #003366;
+    transform: translateY(-2px);
+}
+
+.submit-btn svg {
+    fill: #fff;
+    width: 1em;
+    height: 1em;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info-section,
+    .contact-form-section {
+        width: 100%;
+    }
+
+    .contact-info-section {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-main {
+        padding: 80px 15px;
+    }
+
+    .contact-info-section,
+    .contact-form-section {
+        padding: 2rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
