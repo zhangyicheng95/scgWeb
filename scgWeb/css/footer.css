@@ -176,7 +176,7 @@ a {
 .footer-legal a {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     transition: color 0.3s;
 }
 
@@ -213,6 +213,6 @@ a {
     }
 
     .footer-legal a {
-        margin: 0 0.75rem;
+        margin-right: 0.75rem;
     }
 }

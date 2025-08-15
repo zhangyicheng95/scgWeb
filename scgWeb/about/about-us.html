@@ -4,345 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>联系我们 - 陕西文化产业投资控股（集团）有限公司</title>
+    <title>关于我们 - 陕西文化产业投资控股（集团）有限公司</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/contact-us.css">
+    <link rel="stylesheet" href="../css/about-us.css">
     <link rel="stylesheet" href="../css/aos.css" />
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #0f172a;
-            --muted: #475569;
-            --primary: #0ea5e9;
-            --accent: #22c55e;
-            --border: #e2e8f0;
-            --chip: #f1f5f9;
-            --section: #f8fafc;
-            --shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px rgba(15, 23, 42, .06);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: saturate(180%) blur(12px);
-            background: rgba(255, 255, 255, .8);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-        }
-
-        .brand .logo {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            box-shadow: var(--shadow);
-        }
-
-        .menu {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .menu>li {
-            list-style: none;
-            position: relative;
-        }
-
-        .menu>li>a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 6px;
-            font-size: 14px;
-            color: var(--muted);
-        }
-
-        .menu>li:hover>a {
-            color: var(--text);
-        }
-
-        .menu .dropdown {
-            position: absolute;
-            left: 0;
-            top: 44px;
-            min-width: 220px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            padding: 8px;
-            display: none;
-        }
-
-        .menu li:hover .dropdown {
-            display: block;
-        }
-
-        .dropdown a {
-            display: block;
-            padding: 10px 12px;
-            border-radius: 8px;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .dropdown a:hover {
-            background: var(--chip);
-            color: var(--text);
-        }
-
-        .lang {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-left: 8px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 36px;
-            padding: 0 14px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            background: #fff;
-            color: var(--text);
-            font-size: 14px;
-        }
-
-        .btn:hover {
-            border-color: #cbd5e1;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 56px 0 28px;
-            background: linear-gradient(180deg, #f8fafc, #ffffff 60%);
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            min-height: calc(100vh - 64px);
-        }
-
-        .eyebrow {
-            display: inline-block;
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: var(--chip);
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        h1 {
-            margin: 14px 0 12px;
-            font-size: 36px;
-            letter-spacing: .3px;
-        }
-
-        .subtitle {
-            color: var(--muted);
-            font-size: 16px;
-        }
-
-        /* Sections */
-        section {
-            padding: 40px 0;
-            display: flex;
-            align-items: center;
-            min-height: calc(100vh - 64px);
-        }
-
-        section.alt {
-            background: var(--section);
-        }
-
-        h2 {
-            margin: 0 0 18px;
-            font-size: 24px;
-        }
-
-        h3 {
-            margin: 0 0 10px;
-            font-size: 18px;
-            color: var(--muted);
-            font-weight: 600;
-        }
-
-        .grid {
-            display: grid;
-            gap: 16px;
-        }
-
-        .grid.cols-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .grid.cols-3 {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            box-shadow: var(--shadow);
-            padding: 18px;
-        }
-
-        /* Mission/Vision/Value chips */
-        .chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .chip {
-            background: var(--chip);
-            color: var(--text);
-            padding: 8px 12px;
-            border-radius: 999px;
-            font-size: 13px;
-            border: 1px solid var(--border);
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            margin-left: 8px;
-        }
-
-        .timeline:before {
-            content: "";
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
-        }
-
-        .tl-year {
-            position: relative;
-            padding-left: 28px;
-            margin: 18px 0;
-        }
-
-        .tl-year:before {
-            content: "";
-            position: absolute;
-            left: 2px;
-            top: 6px;
-            width: 16px;
-            height: 16px;
-            background: #fff;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-        }
-
-        .tl-items {
-            padding-left: 28px;
-        }
-
-        .tl-items li {
-            margin: 8px 0;
-            color: #334155;
-        }
-    </style>
 </head>
 
 <body>
     <main>
         <div class="hero">
             <div class="container">
-                <span class="eyebrow">About Us</span>
                 <h1>关于我们</h1>
-                <div class="subtitle">四维生态科技（杭州）有限公司（4D BIOS）公司介绍与发展历程</div>
+                <span class="eyebrow">About Us</span>
             </div>
         </div>
 
         <section id="about">
             <div class="container grid cols-2">
-                <div class="card">
-                    <h2>4D BIOS 公司介绍</h2>
-                    <h3>四维生态科技（杭州）有限公司</h3>
-                    <p>四维生态科技（杭州）有限公司（以下简称“<strong>四维生态</strong>”）是一家服务“三农”的科技企业，正通过创新数智植物工厂模式探索未来农业发展新路径。</p>
-                    <p>四维生态成立于<span>2018</span>年初，瞄准未来农业发展方向，抢抓数字化改革先机，以植物工厂综合解决方案为核心，创新运用光生物LED植物光照、垂直立体种植、植物营养与作物栽培、AI精准环境控制与自动化等高新技术，致力成为全球领先的植物工厂设备提供商及综合服务平台。
-                    </p>
+                <div class="flex-box about-title">
+                    <h2>4D BIOS<br>公司介绍</h2>
                 </div>
-                <div class="card">
-                    <h2>使命 · 愿景 · 价值观</h2>
-                    <div>
-                        <h3>企业使命</h3>
-                        <div class="chips">
-                            <span class="chip">慧农业</span>
-                            <span class="chip">护食安</span>
-                        </div>
-                    </div>
-                    <div style="margin-top:14px;">
-                        <h3>企业愿景</h3>
-                        <div class="chips">
-                            <span class="chip">成为垂直农业引领者</span>
-                            <span class="chip">实现农业数字化</span>
-                            <span class="chip">实现农业智能化</span>
-                            <span class="chip">实现农业工厂化</span>
-                        </div>
-                    </div>
-                    <div style="margin-top:14px;">
-                        <h3>企业价值观</h3>
-                        <div class="chips">
-                            <span class="chip">客户至上</span>
-                            <span class="chip">担当有为</span>
-                            <span class="chip">持续创新</span>
-                            <span class="chip">合作共赢</span>
-                        </div>
-                    </div>
+                <div class="about-content">
+                    <p>
+                        陕西文化产业投资控股（集团）有限公司（简称“陕文投集团”）成立于2009年6月，是陕西省属国有大型文化企业，是陕西实施“文化强省”战略的重要市场平台。历经十六年的发展，陕文投集团总资产超350亿元，全面加快文旅智能科技、文旅数娱科技、文旅融合科技三大核心产业布局，全面建设文旅人工智能创新示范工程。产业门类涵盖影视生产、文化旅游、文化金融、艺术文创、文化传媒等，成为全国最具集群优势和发展活力的国有文化企业之一。
+                    </p>
+                    <br />
+                    <p>
+                        陕文投集团以“让陕西文化走向全国、让中华文明走向世界”为企业使命，以“挖掘历史文化的当代价值，探索传统文化的现代表达，打造陕西文化的市场平台，推动中华文化的国际传播”为发展定位，荣获中国百强旅游投资企业、中国最佳旅游投资机构奖、最具品牌价值文化企业等70多项荣誉。
+                    </p>
+                    <br />
+                    <p>
+                        陕文投打造“AI+文旅”融合发展的陕西样板，用人工智能覆盖文化产业全产业链，建设“华为·陕文投文旅人工智能联合创新中心”，构建文旅数据资源体系、文旅智算服务体系、文旅大模型集群体系、文旅应用生态体系、旅游服务质量评价体系“一中心五体系”，赋能全省文旅产业智能化升级。加快实施以陕西文旅数据底座和AI文旅垂直大模型应用平台为代表的文旅智能科技板块，创新推出以芙蓉新天地—数字娱乐综合体和品牌输出平台为代表的文旅数娱科技板块，倾力打造以长安十二时辰二期“倾城之喜”和品牌输出平台项目为代表的文旅融合科技板块，大力推进文化旅游科技融合新业态、新产品、新体验。
+                    </p>
+                    <br />
+                    <p>
+                        陕文投集团投资制作或联合出品的影视剧达百余部，摘得“全国五个一工程奖”“飞天奖”“金鹰奖”“银熊奖”“金马奖”“金天使奖”等奖项。《西北岁月》《护宝寻踪》《黄土高天》《逐梦蓝天》《王大花的革命生涯》《舰在亚丁湾》《破晓东方》等二十余部电视剧登陆央视黄金档；《风起霓裳》《风起西州》《叶落长安》《好先生》《恋爱先生》《啊摇篮》等四十多部热播全国一线卫视及视频网站。
+                    </p>
+                    <br />
+                    <p>
+                        陕文投推动文化旅游深度融合发展，开发建设的长安十二时辰主题街区、照金红色旅游小镇、延安1938、韩城古城历史文化景区、安康瀛湖生态旅游景区成为全国文化旅游新热点。长安十二时辰主题街区，以其唐文化的独特魅力和表现形式，丰富多样的体验业态，受到社会各界的广泛关注，项目深度挖掘文化价值，用有限空间承载了游客对盛唐长安“人间烟火气”的向往，成为全国文旅行业现象级精品项目。2024年9月27日，全国首个超大型秦文化主题演艺《赳赳大秦》全球公演，平均上座率超96%，受到市场好评，成为西安文旅新名片、陕西文化新地标。参与建设陕西考古博物馆、国家版本馆西安分馆、统万城国家考古遗址公园、黄帝陵中华始祖堂。
+                    </p>
+                    <br />
+                    <p>
+                        陕文投大胆探索文化与金融融合发展之路，构建起文化小贷、文化担保、资产管理、产业基金、融资租赁等业态的文化金融产业链，成立了全国首个文化金控集团“文投金控”。创建全国第一家书画艺术品光谱技术实验室，构建书画艺术品大数据评估平台；依托丝路版权网，建成“西部国家版权链”，打造陕西版权贸易与保护平台。陕文投还与省级有关单位共同发起成立“陕西中华文创研究院”“陕西旅游商品研发基地”，研发千余款文创产品。西部传媒全力打造“一站式数字整合营销传播全价值链服务提供商”。
+                    </p>
+                    <br />
+                    <p>
+                        文化陕西、追梦中国。根植于陕西这片文化沃土，承载着建设文化强省的历史重任，陕文投集团努力践行国有文化企业的使命担当，坚定文化自信，坚持“双效统一”，加快高质量发展，打造全新陕文投。热忱欢迎国内外优秀企业携手合作，共同开创文化产业美好未来。
+                    </p>
                 </div>
             </div>
         </section>
 
+        <section id="mission">
+            <div class="container">
+                <h2 class="mission-title">Mission Vision Value</h2>
+                <div class="mission-grid">
+                    <div class="flex-box-center mission-card">
+                        <h3>企业使命</h3>
+                        <p>占位符占位符占位符占位符占位符占位符</p>
+                        <div class="mission-tag">Mission</div>
+                    </div>
+                    <div class="flex-box-center mission-card">
+                        <h3>企业愿景</h3>
+                        <p>占位符占位符<br>占位符<br>占位符、 占位符、 占位符</p>
+                        <div class="mission-tag">Vision</div>
+                    </div>
+                    <div class="flex-box-center mission-card">
+                        <h3>企业价值观</h3>
+                        <p>占位符占位符占位符占位符占位符<br>占位符占位符，占位符占位符</p>
+                        <div class="mission-tag">Value</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- 
         <section class="alt" id="founder">
             <div class="container grid cols-2">
                 <div class="card">
@@ -385,11 +126,11 @@
                     <div class="tl-year"><strong>2024</strong></div>
                     <ul class="tl-items">
                         <li>02月 富阳四维生态数字农业产业园获评全国现代设施农业创新引领基地</li>
-                        <li>04月 四维生态数字农业产业园入选浙江省第二批“万企兴万村”行动省级实验项目</li>
-                        <li>04月 四维生态董事长华桂潮荣获2023年度浙江数字乡村“十大先锋人物”称号</li>
+                        <li>04月 四维生态数字农业产业园入选浙江省第二批"万企兴万村"行动省级实验项目</li>
+                        <li>04月 四维生态董事长华桂潮荣获2023年度浙江数字乡村"十大先锋人物"称号</li>
                         <li>05月 梅岐乡现代农业产业基地（植物工厂）项目竣工投产</li>
                         <li>05月 察哈尔右翼前旗植物工厂综合体及特色产业园项目竣工投产</li>
-                        <li>06月 四维生态数智植物工厂综合解决方案入选浙江省智慧农业“百千”工程成果案例</li>
+                        <li>06月 四维生态数智植物工厂综合解决方案入选浙江省智慧农业"百千"工程成果案例</li>
                         <li>07月 舟山桃花岛草莓数字植物工厂项目竣工投产</li>
                         <li>11月 富阳四维生态数字农业产业园项目入选 WISE2024 年度社会责任与可持续发展案例</li>
                         <li>11月 四维生态草莓出口中东市场</li>
@@ -403,34 +144,39 @@
                         <li>01月 浙江省首台（套）装备认定——四维生态数智全环控种植设备</li>
                         <li>05月 打造特色草原新农业，四维生态草原数智植物工厂在内蒙古乌兰察布奠基开工</li>
                         <li>08月 传承红色文化，融合绿色农业发展，四维生态与景宁共同打造现代农业产业园项目</li>
-                        <li>09月 浙江省首家草莓育苗及种植研发中心在建德落成</li>
-                        <li>11月 四维生态入选为浙江省第二批“专精特新”中小企业</li>
-                        <li>12月 四维生态现代化数字农业植物工厂通过省级数字农业工厂认定</li>
+                        <li>09月 四维生态荣登《财富》2023中国最具社会影响力的创业公司榜单</li>
+                        <li>10月 四维生态富阳数字农业产业园一期顺利竣工，盛大开园</li>
+                        <li>11月 四维生态入选2023年浙江省高成长高新技术企业200强</li>
+                        <li>11月 四维生态荣登VCEARTH2023未来农业100强榜单</li>
+                        <li>12月 作为杭州市首家获得出口资质的草莓基地，四维生态草莓出口海外市场</li>
                     </ul>
 
                     <div class="tl-year"><strong>2022</strong></div>
                     <ul class="tl-items">
-                        <li>（内容见官网大事记）</li>
+                        <li>05月 百所职业院校齐上阵：举办第二届全国职业院校智慧农业种植大赛</li>
+                        <li>09月 出席浙江省农业高质量发展大会，董事长华桂潮作主题为《创新数智植物工厂模式 探索未来农业发展新路径》的发言，并参与农业"双强"重大项目签约仪式</li>
+                        <li>09月 浙江省首家草莓育苗及种植研发中心在建德落成</li>
+                        <li>11月 四维生态入选为浙江省第二批"专精特新"中小企业</li>
+                        <li>12月 四维生态现代化数字农业植物工厂通过省级数字农业工厂认定</li>
                     </ul>
 
                     <div class="tl-year"><strong>2021</strong></div>
                     <ul class="tl-items">
                         <li>09月 四维生态自主研发的数智全环控种植设备发布，打造可满足教育、科研、赛事等场景的专用设备</li>
-                        <li>10月 成功举办“第一届全国职业院校智慧农业种植大赛（试点赛）”，首次实现全国农业种植赛事“同场”竞技</li>
+                        <li>10月 成功举办"第一届全国职业院校智慧农业种植大赛（试点赛）"，首次实现全国农业种植赛事"同场"竞技</li>
                         <li>10月
-                            四维生态“数字化农业工厂关键技术及产业化应用”项目、“数字化育苗生产成套装备-数字化育苗与定植成套装备研发”项目、“设施叶菜规模化生产智能装备-设施叶菜规模化全链自动化关键技术与智能装备研究及示范”项目成功通过浙江省科学技术厅“尖兵”、“领雁”立项评审
+                            四维生态"数字化农业工厂关键技术及产业化应用"项目、"数字化育苗生产成套装备-数字化育苗与定植成套装备研发"项目、"设施叶菜规模化生产智能装备-设施叶菜规模化全链自动化关键技术与智能装备研究及示范"项目成功通过浙江省科学技术厅"尖兵"、"领雁"立项评审
                         </li>
                         <li>12月 占地121亩的四维生态数字农业产业园项目在杭州富阳奠基</li>
+                    </ul>
+
+                    <div class="tl-year"><strong>2020</strong></div>
+                    <ul class="tl-items">
                         <li>04月 四维生态被认定为杭州市青少年科普教育基地</li>
                         <li>06月 四维生态被认定为杭州市高新区（滨江）瞪羚企业</li>
                         <li>08月 四维生态集装箱种植设备成功出口欧洲</li>
                         <li>11月 与浙江大华技术股份有限公司达成战略合作，携手共建智慧生态教室</li>
                         <li>12月 四维生态通过国家高新技术企业认定</li>
-                    </ul>
-
-                    <div class="tl-year"><strong>2020</strong></div>
-                    <ul class="tl-items">
-                        <li>（内容见官网大事记）</li>
                     </ul>
 
                     <div class="tl-year"><strong>2019</strong></div>
@@ -452,17 +198,75 @@
             </div>
         </section>
 
-        <section class="alt" id="ip">
-            <div class="container grid cols-2">
-                <div class="card">
-                    <h2>企业荣誉</h2>
-                    <p>持续更新中，敬请期待。</p>
+        <section class="alt" id="honor">
+            <div class="container">
+                <h2>企业荣誉</h2>
+                <div class="grid cols-4" style="margin-top:20px;">
+                    <div class="card"
+                        style="padding:10px; min-height:120px; display:flex; align-items:center; justify-content:center;">
+                        <span style="color:var(--muted); font-size:12px;">荣誉证书</span>
+                    </div>
+                    <div class="card"
+                        style="padding:10px; min-height:120px; display:flex; align-items:center; justify-content:center;">
+                        <span style="color:var(--muted); font-size:12px;">荣誉证书</span>
+                    </div>
+                    <div class="card"
+                        style="padding:10px; min-height:120px; display:flex; align-items:center; justify-content:center;">
+                        <span style="color:var(--muted); font-size:12px;">荣誉证书</span>
+                    </div>
+                    <div class="card"
+                        style="padding:10px; min-height:120px; display:flex; align-items:center; justify-content:center;">
+                        <span style="color:var(--muted); font-size:12px;">荣誉证书</span>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="ip">
+            <div class="container grid cols-2">
                 <div class="card">
                     <h2>技术实力 / 专利证书</h2>
                     <p>四维生态科技（杭州）有限公司已申请国内外专利共计近 <strong>150</strong> 项，其中发明专利 <strong>72</strong> 项，实用新型专利
                         <strong>59</strong> 项，外观专利 <strong>18</strong> 项，并拥有多项涉及智能光照调控、人工环境闭环控制、植物工厂控制系统等的软件著作权。
                     </p>
+                </div>
+                <div class="card">
+                    <h2>专利展示</h2>
+                    <div class="grid cols-3" style="margin-top:10px;">
+                        <div class="card"
+                            style="padding:10px; min-height:80px; display:flex; align-items:center; justify-content:center;">
+                            <span style="color:var(--muted); font-size:12px;">专利证书</span>
+                        </div>
+                        <div class="card"
+                            style="padding:10px; min-height:80px; display:flex; align-items:center; justify-content:center;">
+                            <span style="color:var(--muted); font-size:12px;">专利证书</span>
+                        </div>
+                        <div class="card"
+                            style="padding:10px; min-height:80px; display:flex; align-items:center; justify-content:center;">
+                            <span style="color:var(--muted); font-size:12px;">专利证书</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="alt" id="partners">
+            <div class="container">
+                <h2>合作伙伴</h2>
+                <p style="color:var(--muted); font-size:14px; margin-bottom:20px;">*企业名单排名不分先后</p>
+                <div class="partners">
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
+                    <div class="partner-logo"></div>
                 </div>
             </div>
         </section>
@@ -481,17 +285,43 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
+    
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" class="scroll-to-top-btn" title="返回顶部">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L4 12H9V20H15V12H20L12 4Z" fill="currentColor"/>
+        </svg>
+        <span>Top</span>
+    </button>
+    
     <script src="../js/gsap.min.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/aos.js"></script>
+    
+    <!-- Scroll to top functionality -->
     <script>
-        // 初始化AOS动画
-        AOS.init({
-            duration: 800,
-            once: true,
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
+            // Smooth scroll to top when button is clicked
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>

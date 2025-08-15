@@ -170,4 +170,13 @@ class Header {
 // 页面加载完成后初始化导航
 document.addEventListener('DOMContentLoaded', () => {
   new Header();
+
+  setTimeout(() => {
+    // 页面加载完成后滚动到顶部
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, 300);
 }); 

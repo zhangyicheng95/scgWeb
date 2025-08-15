@@ -1,0 +1,23 @@
+{
+  "name": "scg-web",
+  "version": "1.0.0",
+  "description": "陕西文化产业投资控股（集团）有限公司官网",
+  "main": "dev-server.js",
+  "scripts": {
+    "dev": "node dev-server.js",
+    "start": "node dev-server.js",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "website",
+    "culture",
+    "investment",
+    "shaanxi"
+  ],
+  "author": "SCG Team",
+  "license": "MIT",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
