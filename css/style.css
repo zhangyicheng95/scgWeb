@@ -1142,7 +1142,7 @@ h3 {
 .div-toggle-group {
   display: flex;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
+  border-radius: 1rem;
   /* 更圆润的边角 */
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.2);

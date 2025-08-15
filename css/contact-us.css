@@ -30,12 +30,7 @@ body {
 
 .contact-info-section,
 .contact-form-section {
-    padding: 4rem;
-    width: 50%;
-}
-
-.contact-form-section {
-    padding: 4rem;
+    padding: 4rem 8rem;
     width: 50%;
 }
 
@@ -102,7 +97,7 @@ body {
     padding: 2.5rem;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    width: 70%;
+    width: 80%;
 }
 
 .form-intro {
