@@ -527,6 +527,7 @@ h3 {
 
 #firstGo .wc {
   margin: 0;
+  color: #fff;
 }
 
 .layer-icon {
@@ -749,6 +750,7 @@ h3 {
 }
 
 .secondAlan {
+  color: #fff;
   font-family: AlibabaFangYuanTi;
   font-weight: 300;
   /* margin-bottom: 10rem; */
@@ -1480,7 +1482,7 @@ h3 {
 
 .industry-item .industry-desc {
   display: none;
-  color: #666;
+  color: #878787;
   font-size: 2rem;
   margin-top: 2rem;
   text-align: left;

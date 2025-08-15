@@ -13,15 +13,15 @@
 }
 
 .site-header:hover {
-  width: 100%;
-  transform-origin: 50% 0;
-  height: 50vh;
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border-radius: 0 0 2.5vw 2.5vw;
-  transition: transform .5s;
+  width: 100% !important;
+  transform-origin: 50% 0 !important;
+  height: 50vh !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+  border-radius: 0 0 2.5vw 2.5vw !important;
+  transition: transform .5s !important;
 }
 
 .site-header.scrolled {
@@ -97,14 +97,14 @@
 }
 
 .nav-link {
-  color: #f4f4f4;
-  white-space: nowrap;
-  font-weight: 600;
-  transition: opacity .3s;
-  display: block;
-  font-size: 1.4rem;
-  text-decoration: none;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  color: #f4f4f4 !important;
+  white-space: nowrap !important;
+  font-weight: 600 !important;
+  transition: opacity .3s !important;
+  display: block !important;
+  font-size: 1.4rem !important;
+  text-decoration: none !important;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5) !important;
 }
 
 .nav-link:hover,

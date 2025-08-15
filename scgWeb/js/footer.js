@@ -14,6 +14,7 @@ class Footer {
     }
 
     createFooter() {
+        const baseUrl = window.location.origin + (window.location.href?.indexOf('/scgWeb/') > -1 ? '/scgWeb' : '');
         const footer = document.createElement('footer');
         footer.className = 'site-footer';
         footer.innerHTML = `
@@ -44,14 +45,14 @@ class Footer {
                         <div class="footer-nav-col">
                             <h4>关于我们</h4>
                             <ul>
-                                <li><a href="#">公司介绍</a></li>
+                                <li><a href="${baseUrl}/about/about-us.html">公司介绍</a></li>
                                 <li><a href="#">新闻中心</a></li>
                             </ul>
                         </div>
                         <div class="footer-nav-col">
                             <h4>联系我们</h4>
                             <ul>
-                                <li><a href="../about/concat-us.html">联系我们</a></li>
+                                <li><a href="${baseUrl}/about/contact-us.html">联系我们</a></li>
                                 <li><a href="#">成为合作伙伴</a></li>
                             </ul>
                         </div>

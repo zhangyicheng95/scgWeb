@@ -1,0 +1,23 @@
+{
+  "name": "scg-web",
+  "version": "1.0.0",
+  "description": "陕西文投集团官网",
+  "scripts": {
+    "update-version": "node update-version.js",
+    "dev": "echo '开发模式：每次修改后运行 npm run update-version 来更新版本号'",
+    "build": "npm run update-version && echo '构建完成，版本号已更新'",
+    "deploy": "bash deploy.sh",
+    "deploy:quick": "bash quick-deploy.sh",
+    "deploy:full": "bash full-deploy.sh",
+    "deploy:daily": "bash daily-deploy.sh",
+    "deploy:test": "bash deploy.sh --test",
+    "deploy:prod": "bash deploy.sh --production"
+  },
+  "keywords": ["bootstrap", "web", "scg", "deploy"],
+  "author": "SCG Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+} 
